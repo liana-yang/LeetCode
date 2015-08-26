@@ -4,8 +4,21 @@ class Solution:
     # @return {integer}
 
     def numDistinct(self, s, t):
-        result = 0
-        return result
+        m = len(t)
+        n = len(s)
+        if m > n:
+            return 0
+        path = [0 for i in range(m + 1)]
+        path[0] = 1
+        for j in range(1, n + 1):
+            i = m
+            while i >= 1:
+                if t[i - 1] == s[j - 1]:
+                    path[i] += path[i - 1]
+                i -= 1
+        return path[m]
+
+
 
 if __name__=='__main__':
     from time import clock

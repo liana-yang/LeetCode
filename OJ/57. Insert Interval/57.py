@@ -23,9 +23,9 @@ class Solution:
             i += 1
         result.append(Interval(start, end))
         result += intervals[i:]
-        for v in result:
-            print v.start
-            print v.end
+        #for v in result:
+        #    print v.start
+        #    print v.end
         return result
 
 if __name__=='__main__':

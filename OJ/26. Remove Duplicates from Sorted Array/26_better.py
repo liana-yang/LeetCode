@@ -2,16 +2,14 @@ class Solution:
     # @param {integer[]} nums
     # @return {integer}
     def removeDuplicates(self, nums):
-        length = len(nums)
-        i = length
-        while(i > 1):
-            if nums[i - 2] == nums[i - 1]:
-                del nums[i - 2]
-                length -= 1
-            i -= 1 
-        #print nums
-        #print "length = %s" % length
-        return length
+        if not nums:
+            return 0
+        newTail = 0
+        for i in range(1, len(nums)):
+            if nums[i] != nums[newTail]:
+                newTail += 1
+                nums[newTail] = nums[i]
+        return newTail + 1
 
 if __name__=='__main__':
     from time import clock

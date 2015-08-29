@@ -13,11 +13,11 @@ class Solution:
             for j in range(0,len(p)):  
                 tmp1,tmp2 = p[:j:],p[j+1::]  
                 for c in "abcdefghijklmnopqrstuvwxyz":  
-                    if c==p[j]:  
+                    if c == p[j]:  
                         continue  
-                    tmp = tmp1 +c+ tmp2  
+                    tmp = tmp1 + c + tmp2  
                     if tmp in wordDict:  
-                        if tmp==end:  
+                        if tmp == end:  
                             return l+1  
                         wordDict.remove(tmp)  
                         path.append((tmp,l+1))  

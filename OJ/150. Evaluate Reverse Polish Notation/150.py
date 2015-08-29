@@ -5,6 +5,8 @@ class Solution:
         stack = []
         result = 0
         length = len(tokens)
+        if length == 1:
+            return int(tokens[0])
         for i in range(length):
             if tokens[i] == '+':
                 result = int(stack[- 2]) + int(stack[- 1])
@@ -28,8 +30,6 @@ class Solution:
                 stack.append(result)
             else:
                 stack.append(tokens[i])
-        if length == 1:
-            result = int(tokens[0])
         return result
         
 

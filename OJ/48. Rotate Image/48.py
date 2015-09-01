@@ -3,7 +3,6 @@ class Solution:
     # @return {void} Do not return anything, modify matrix in-place instead.
     def rotate(self, matrix):
         row = len(matrix)
-        column = 0
         if matrix:
             column = len(matrix[0])
             temp = [[] for i in range(row)]

@@ -3,16 +3,14 @@ class Solution:
     # @param {integer} target
     # @return {boolean}
     def searchMatrix(self, matrix, target):
-        result = False
         if matrix:
             length = len(matrix)
             for i in range(length):
                 if target >= matrix[i][0]:
                     if i == length - 1 or target < matrix[i + 1][0]:
-                        for n in matrix[i]:
-                            if n == target:
-                                return True
-        return result
+                        if target in matrix[i]:
+                            return True
+        return False
 
 if __name__=='__main__':
     from time import clock

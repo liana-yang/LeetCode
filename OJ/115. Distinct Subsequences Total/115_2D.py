@@ -7,8 +7,9 @@ class Solution:
         m = len(t)
         n = len(s)
         if m > n:
-            return 0
+            return 0 # impossible for subsequence
         path = [[] for i in range(m + 1)]
+        # initialization
         for i in range(0, m + 1):
             if i == 0:
                 for j in range(0, n + 1):

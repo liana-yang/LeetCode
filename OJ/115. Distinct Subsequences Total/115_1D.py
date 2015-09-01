@@ -11,6 +11,7 @@ class Solution:
         path = [0 for i in range(m + 1)]
         path[0] = 1
         for j in range(1, n + 1):
+            # traversing backwards so we are using path[i-1] from last time step
             i = m
             while i >= 1:
                 if t[i - 1] == s[j - 1]:

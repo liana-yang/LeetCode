@@ -10,30 +10,18 @@ class Solution:
     def deleteDuplicates(self, head):
         dummy = ListNode(0)
         dummy.next = head
-        temp = dummy
-        if head:
-            front = head
-            back = head.next
-            while back:
-                if back.val == front.val:
-                    back = back.next
-                elif front.next != back:
-                    temp.next = back
-                    front = back
-                    back = back.next
-                else:
-                    temp = temp.next
-                    front = front.next
-                    back = back.next
-            if front.next != back:
-                temp.next = None
-
-        '''t = start.next
-        while t:
-            print t.val
-            t = t.next'''
-
+        front = dummy
+        cur = head
+        while cur:
+            while cur.next and cur.val == cur.next.val:
+                cur = cur.next
+            if front.next == cur:
+                front = front.next
+            else:
+                front.next = cur.next
+            cur = cur.next
         return dummy.next
+
 
 
 if __name__=='__main__':

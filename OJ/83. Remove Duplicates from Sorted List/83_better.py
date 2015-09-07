@@ -8,40 +8,30 @@ class Solution:
     # @param {ListNode} head
     # @return {ListNode}
     def deleteDuplicates(self, head):
-        dummy = ListNode(0)
-        dummy.next = head
-        temp = dummy
-        if head:
-            front = head
-            back = head.next
-            while back:
-                if back.val == front.val:
-                    back = back.next
-                elif front.next != back:
-                    temp.next = back
-                    front = back
-                    back = back.next
-                else:
-                    temp = temp.next
-                    front = front.next
-                    back = back.next
-            if front.next != back:
-                temp.next = None
+        cur = head
+        while cur and cur.next:
+            if cur.val == cur.next.val:
+                #temp = cur.next
+                #cur.next = cur.next.next
+                #del temp
+                cur.next = cur.next.next
+            else:
+                cur = cur.next
 
-        '''t = start.next
+        '''t = head
         while t:
             print t.val
             t = t.next'''
 
-        return dummy.next
+        return head
 
 
 if __name__=='__main__':
     from time import clock
     start = clock()
-    l1 = ListNode(1)
+    l1 = ListNode(2)
     v1 = ListNode(2)
-    v2 = ListNode(2)
+    v2 = ListNode(7)
 
     l1.next = v1
     v1.next = v2

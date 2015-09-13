@@ -27,7 +27,10 @@ class Trie(object):
     def __init__(self):
         self.root = TrieNode()
 
-    def insert(self, word):
+    def insert(self, word): 
+        # insert key into trie and put value into key's bucket
+        # bucket contains a piece of information, such as an integer
+        # here bucket contains True or False here (is_word)
         """
         Inserts a word into the trie.
         :type word: str
@@ -39,7 +42,7 @@ class Trie(object):
         current.is_word = True
         
 
-    def search(self, word):
+    def search(self, word): # true if trie has key, false otherwise
         """
         Returns if the word is in the trie.
         :type word: str
@@ -51,9 +54,13 @@ class Trie(object):
             if current is None:
                 return False
         return current.is_word
-        
 
+    # def retrieve_val(self, key, trie):
+    # retrieves the value from key's bucket
+        
     def startsWith(self, prefix):
+        # return the list of all keys that begin with the prefix 
+        # where predix is a string of at least one character
         """
         Returns if there is any word in the trie
         that starts with the given prefix.

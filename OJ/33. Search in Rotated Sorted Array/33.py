@@ -10,7 +10,7 @@ class Solution(object):
         low = 0
         high = len(nums) - 1
         while low <= high:
-        	mid = (low + high) / 2
+        	mid = low + (high - low) / 2
         	if target == nums[mid]:
         		return mid
         	if nums[low] <= nums[mid]:

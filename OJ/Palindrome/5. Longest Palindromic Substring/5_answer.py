@@ -16,11 +16,11 @@ class Solution:
         for i in range(len(s)):
             if self.isPalindromic(s[i - max_length: i + 1]):
                 longest_index = i - max_length
-                max_length = max_length + 1
+                max_length += 1
             elif i - max_length - 1 >= 0 and self.isPalindromic(s[i - max_length - 1: i + 1]):
                 longest_index = i - max_length - 1
-                max_length = max_length + 2
-            print "longest_index = %s, max_length = %s" % (longest_index, max_length)
+                max_length += 2
+            # print "longest_index = %s, max_length = %s" % (longest_index, max_length)
 
         return s[longest_index:longest_index + max_length]
         

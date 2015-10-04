@@ -36,6 +36,6 @@ if __name__=='__main__':
     from time import clock
     start = clock()
     s = Solution()
-    print s.permuteUnique([1,1,3])
+    print s.permuteUnique([1,3,5,4])
     finish = clock()
     print (finish - start) * 1000

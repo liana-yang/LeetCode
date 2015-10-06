@@ -47,4 +47,5 @@ class Solution(object):
 
 s = Solution()
 print s.largestRectangleArea([2,1,5,6,2,3])
+print s.largestRectangleArea([6,2,5,4,5,1,6])
 

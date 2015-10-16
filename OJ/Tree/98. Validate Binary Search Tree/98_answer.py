@@ -13,13 +13,13 @@ class Solution:
         stack = []
         p = root
         pre = None
-        while (p != None and p.val != '#') or stack:
-            if p != None and p.val != '#':
+        while p or stack:
+            if p:
                 stack.append(p)
                 p = p.left
             else:
                 temp = stack.pop()
-                if (pre != None and pre.val != '#') and temp.val <= pre.val:
+                if pre and temp.val <= pre.val:
                     return False
                 pre = temp
                 p = temp.right

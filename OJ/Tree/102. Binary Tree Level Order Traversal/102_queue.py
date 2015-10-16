@@ -13,20 +13,20 @@ class Solution(object):
         """
         result = []
         if not root:
-        	return result
+            return result
         queue = [root]
         while queue:
-        	levelNum = len(queue)
-        	temp = []
-        	for i in range(levelNum):
-        		cur = queue[0]
-        		temp.append(cur.val)
-        		if cur.left:
-        			queue.append(cur.left)
-        		if cur.right:
-        			queue.append(cur.right)
-        		del queue[0]
-        	result.append(temp)
+            levelNum = len(queue)
+            temp = []
+            for i in range(levelNum):
+                cur = queue[0]
+                temp.append(cur.val)
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+                del queue[0]
+            result.append(temp)
         return result
 
 
